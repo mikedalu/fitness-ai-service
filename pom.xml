@@ -66,6 +66,12 @@
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit-stream</artifactId>
 		</dependency>
+
+<!--		For making HTTP Request like axios-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
