@@ -15,12 +15,12 @@ public class GemniService
     @Value("${gemni.api.key}")
     private String gemniApiKey;
 
-    private WebClient webClient;
+    private final WebClient webClient;
     public GemniService(WebClient.Builder webClientBuilder){
         this.webClient = webClientBuilder.build();
     }
 
-    public String getAnser(String question){
+    public String getAnwser(String question){
 
 //  This sampl payload  is onstructed below
 //        {
@@ -38,6 +38,7 @@ public class GemniService
 
         String response = webClient.post()
                 .uri(gemniApiUrl + gemniApiKey)
+                .bodyValue(requestBody)
                 .header("Content-Type","application/json")
                 .retrieve()
                 .bodyToMono(String.class)
