@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Document(collection = "recommendation")
+@Document(collection = "recommendations")
 @Data()
 @Builder
 @AllArgsConstructor
@@ -26,6 +26,7 @@ public class Recommendation {
     private String recommendation;
     private List<String> improvements;
     private List<String> suggestions;
+    private List<String> safety;
 
     @CreatedDate
     private LocalDateTime createdAt;
